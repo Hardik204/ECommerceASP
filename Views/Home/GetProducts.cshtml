@@ -1,0 +1,136 @@
+﻿@model IEnumerable<ECommerce2.Models.PR_Product_SelectAllResult>
+
+    @{
+        ViewData["Title"] = "Products List";
+    }
+
+    <link rel="stylesheet" href="~/wwwroot/assets/css/AllProducts.css">
+
+    <div class="make-flex product-insertion">
+        <div>@Html.ActionLink("<","Index",null, new { @class= "btn navigation-btn" })</div>
+        <div>@Html.ActionLink("Add Product", "ProductInsert",null,new { @class = "btn btn-primary"})</div>
+    </div>
+    <main>
+        <div class="make-flex content">
+            <div class="categories">
+                <h2 class="category-heading">Categories</h2>
+                <div class="category-items">
+                    <div class="category-sub-item category-gender">
+                        <a href="#">
+                            Category <img width="15px" height="15px"
+                                        src="https://img.icons8.com/ios-glyphs/30/expand-arrow--v1.png"
+                                        alt="expand-arrow--v1" />
+                        </a>
+                        <ul class="category-sub-item-list category-gender-list">
+                            <li>@Html.ActionLink("All", "GetProducts")</li>
+                            <li>@Html.ActionLink("Automotive", "GetProducts", new { category = "Automotive" })</li>
+                            <li>@Html.ActionLink("Clothing", "GetProducts", new { category = "Clothing" })</li>
+                            <li>@Html.ActionLink("Furniture", "GetProducts", new { category = "Furniture" })</li>
+                            <li>@Html.ActionLink("Hardware", "GetProducts", new { category = "Hardware" })</li>
+                            <li>@Html.ActionLink("Home Appliances", "GetProducts", new { category = "Home Appliances" })</li>
+                            <li>@Html.ActionLink("Laptops", "GetProducts", new { category = "Laptops" })</li>
+                            <li>@Html.ActionLink("Smartphones", "GetProducts", new { category = "Smartphones" })</li>
+                            <li>@Html.ActionLink("Sports", "GetProducts", new { category = "Sports Equipment" })</li>
+                            <li>@Html.ActionLink("Tools", "GetProducts", new { category = "Tools" })</li>
+                        </ul>
+                    </div>
+                    <div class="category-sub-item category-sale">
+                        <a href="#">
+                            Price <img width="15px" height="15px"
+                                      src="https://img.icons8.com/ios-glyphs/30/expand-arrow--v1.png"
+                                      alt="expand-arrow--v1" />
+                        </a>
+                        <ul class="category-sub-item-list category-sale-list">
+                            <li> @Html.ActionLink("Low to High", "GetProducts",new { price = "lth"})</li>
+                            <li> @Html.ActionLink("High to Low", "GetProducts", new { price = "htl"})</li>
+                        </ul>
+                    </div>
+                    <div class="category-sub-item category-product">
+                        <a href="#">
+                            Gender <img width="15px" height="15px"
+                                         src="https://img.icons8.com/ios-glyphs/30/expand-arrow--v1.png"
+                                         alt="expand-arrow--v1" />
+                        </a>
+                        <ul class="category-sub-item-list category-product-list">
+                            <li>Male</li>
+                            <li>Female</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <h2>Products</h2>
+                <div class="allProducts">
+                    <!-- All the product cards will be appended here.-->
+ 
+                    @foreach (var item in Model)
+                    {
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="@Url.Content(item.Images.ToString())" alt="image" height="200px">
+                            </div>
+                            <div class="make-flex card-body">
+                                <div class="product-name">@item.Name<br /><small>@item.Brand</small></div>
+                                <div>Rs. @item.SalePrice</div>
+                            </div>
+                            <div class="make-flex card-footer">
+                                @Html.ActionLink("View Product","ProductDetails",new { id = item.Id })
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="make-flex pagination-section">
+            <a type="button" href="#" id="previousPage">←</a><span id="pageNumber"></span><a type="button" href="#" id="nextPage">→</a>
+        </div>
+    </main>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".category-gender > a").click(function () {
+                $(".category-gender-list").slideToggle();
+                $(".category-sale-list").slideUp();
+                $(".category-product-list").slideUp();
+            })
+
+            $(".category-sale > a").click(function () {
+                $(".category-sale-list").slideToggle();
+                $(".category-gender-list").slideUp();
+                $(".category-product-list").slideUp();
+            })
+
+            $(".category-product > a").click(function () {
+                $(".category-product-list").slideToggle();
+                $(".category-gender-list").slideUp();
+                $(".category-sale-list").slideUp();
+            })
+        })
+    </script>
+
+@*@helper showProducts(IEnumerable<ECommerce2.Models.PR_Product_SelectAllResult> model)
+{
+    foreach(var item in model)
+    {
+        createCard(item);
+    }
+}
+
+@helper createCard(ECommerce2.Models.PR_Product_SelectAllResult item)
+{
+    <div class="card">
+        <div class="card-img">
+            <img src="@item.Images" alt="image" height="250px">
+        </div>
+        <div class="make-flex card-body">
+            <div class="product-name">@item.Name<br /><small>@item.Category</small></div>
+            <div>Rs. @item.Model - @item.Brand by @item.Manufacturer</div>
+        </div>
+        <div class="make-flex card-footer">
+            <a href="/ProductDetails/@item.Id">View Product</a>
+        </div>
+    </div>
+}*@
+    @*<script src="~/assets/js/AllProducts.js"></script>*@
+

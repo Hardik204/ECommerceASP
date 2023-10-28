@@ -1,0 +1,43 @@
+.make-flex{
+    display: flex;
+}
+
+body{
+    margin: 0;
+}
+
+footer{
+    color: white;
+}
+
+.footer-top{
+    background-color: #212934;
+}
+
+.footer-body{
+    justify-content: space-evenly;
+    padding: 50px 0px;
+}
+
+.footer-prebody{
+    justify-content: space-between;
+    margin: 0px 50px;
+}
+
+.footer-social-media-item{
+    margin: 5px 15px;
+}
+
+.footer-newsletter > input{
+    border: none;
+    margin-right: 5px;
+}
+
+.footer-newsletter > a{
+    background-color: #59ab6e;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 10%;
+}

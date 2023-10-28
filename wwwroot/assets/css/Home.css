@@ -1,0 +1,45 @@
+.make-flex{
+    display: flex;
+}
+
+.intro-section{
+    margin: 50px 150px;
+}
+
+.intro-content{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text{
+    width: 300px;
+}
+
+.category-intro{
+    text-align: center;
+    margin: 90px 105px 30px 50px;
+}
+
+.category-section{
+    justify-content: center;
+}
+
+.sub-category{
+    margin: 20px 50px;
+    text-align: center;
+}
+
+.category-img > img{
+    width: 350px;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.sub-category > a{
+    color: white;
+    background-color: #59ab6e;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10%;
+}

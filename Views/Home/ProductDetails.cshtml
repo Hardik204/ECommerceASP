@@ -1,0 +1,62 @@
+﻿@model ECommerce2.Models.PR_Product_SelectByPKResult
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<link rel="stylesheet"  href="~/wwwroot/assets/css/selectProduct.css"/>
+
+<div class="navigation-btn-section make-flex">
+    <div>@Html.ActionLink("<", "GetProducts", null, new { @class = "btn navigation-btn" })</div>
+    <div>
+        @Html.ActionLink("Update", "ProductInsert", new {id = Model.Id} , new { @class = "btn btn-primary"})
+        @Html.ActionLink("Delete", "ProductDelete", new {id = Model.Id} , new { @class = "btn btn-danger" , onclick="return askConfirmation()"})
+    </div>
+</div>
+
+<main>
+    <div class="make-flex main">
+        <div class="product-image-div">
+            <img src="@Model.Images" class="product-img" height="500px" />
+        </div>
+        <div class="product-details">
+            <h1 class="product-name">Product Name : @Model.Name</h1>
+            <h3 class="product-price">Product Price : @Model.SalePrice</h3>
+            <h3>Model Details : @Model.Model - @Model.Brand</h3>
+            <h4>What is this product ?</h4>
+            <p class="product-description">@Model.Description</p>
+            <br>
+            <div class="product-seller"><b>Product Manufacturer : </b>@Model.Manufacturer</div>
+            <b>Sizes available : </b> @Model.Size
+            <div class="make-flex product-features">
+                <div><b>Variant : </b> @Model.Variant</div>
+                <div><b>Color : </b> @Model.Color</div>
+            </div>
+            <br>
+            <div class="quantity-selection"><b>Select the quantity : </b> <a type="button" class="quantity-up">↑</a><span class="quantity-value"> 0 </span><a type="button" class="quantity-down">↓</a></div>
+            <div class="make-flex buy-options">
+                <a type="button" href="#">Buy Now</a>
+                <a type="button" href="#">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    function askConfirmation() {
+        //return Swal.fire({
+        //    title: 'Are you sure you want to delete this item ?',
+        //    showDenyButton: false,
+        //    showCancelButton: true,
+        //    confirmButtonText: 'Save',
+        //    denyButtonText: `Don't save`,
+        //}).then((result) => {
+        //    /* Read more about isConfirmed, isDenied below */
+        //    if (result.isConfirmed) {
+        //        Swal.fire('Deleted!', '', 'success')
+        //    }
+        //})
+        return confirm("Are you sure you want to delete the product.");
+    }
+</script>
+
+<script src="~/wwwroot/assets/js/selectProduct.js"></script>

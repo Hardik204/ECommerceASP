@@ -1,0 +1,12 @@
+﻿html{
+    scroll-behavior:smooth;
+}
+
+.main {
+    margin:10px 340px;
+}
+
+.navigation-btn {
+    background-color: #59ab6e;
+    color: white;
+}

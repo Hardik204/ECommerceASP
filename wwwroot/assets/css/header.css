@@ -1,0 +1,63 @@
+.make-flex{
+    display: flex;
+}
+
+body{
+    margin: 0px;
+}
+
+.company-logo{
+    height: 115px;
+}
+
+.mini-header{
+    background-color: #212934;
+    color: white;
+    padding: 10px 100px;
+    justify-content: space-between;
+}
+
+.contact > .contact-item , .social-media > .social-media-item{
+    margin-left: 10px;
+}
+
+.social-media-item{
+    height: 20px;
+}
+
+.navigation-bar{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header{
+    padding: 0px 100px;
+    box-shadow: 0px 0px 10px 0px #6c757d;
+}
+
+.navigation-item{
+    margin: 0px 35px;
+    color: #808080;
+    text-decoration: none;
+}
+
+.navigation-item:hover{
+    color: #59ab6e;
+}
+
+.features{
+    align-items: center;
+}
+
+.feature-item{
+    margin-left: 10px;
+} 
+
+/* Media Queries */
+@media (max-width : 1024px){
+    .navigation-bar-1024{
+        background-image: url('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g transform="translate(1 1)"> <g> <rect x="18.692" y="43.308" style="fill:#E2E3E5;" width="492.308" height="19.692"></rect> <rect x="18.692" y="181.154" style="fill:#E2E3E5;" width="492.308" height="19.692"></rect> <rect x="18.692" y="319" style="fill:#E2E3E5;" width="492.308" height="19.692"></rect> <rect x="18.692" y="456.846" style="fill:#E2E3E5;" width="492.308" height="19.692"></rect> </g> <g> <path style="fill:#B6B6B6;" d="M501.154,53.154H8.846C2.938,53.154-1,49.215-1,43.308s3.938-9.846,9.846-9.846h492.308 c5.908,0,9.846,3.938,9.846,9.846S507.062,53.154,501.154,53.154z"></path> <path style="fill:#B6B6B6;" d="M501.154,191H8.846C2.938,191-1,187.062-1,181.154s3.938-9.846,9.846-9.846h492.308 c5.908,0,9.846,3.938,9.846,9.846S507.062,191,501.154,191z"></path> <path style="fill:#B6B6B6;" d="M501.154,328.846H8.846C2.938,328.846-1,324.908-1,319c0-5.908,3.938-9.846,9.846-9.846h492.308 c5.908,0,9.846,3.938,9.846,9.846C511,324.908,507.062,328.846,501.154,328.846z"></path> <path style="fill:#B6B6B6;" d="M501.154,466.692H8.846c-5.908,0-9.846-3.938-9.846-9.846C-1,450.939,2.938,447,8.846,447h492.308 c5.908,0,9.846,3.938,9.846,9.846C511,462.754,507.062,466.692,501.154,466.692z"></path> </g> </g> </g></svg>');
+    }
+    
+}
